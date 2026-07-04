@@ -9,18 +9,30 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.app.NotificationCompat
 import com.example.aplicacionpro.ui.theme.AplicacionPROTheme
 import com.example.aplicacionpro.utils.CryptoUtils
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -42,14 +54,7 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
 
         setContent {
             AplicacionPROTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column(modifier = Modifier.padding(innerPadding).padding(16.dp)) {
-                        Text(text = "Heart Rate: ${currentHR.toInt()} BPM", style = MaterialTheme.typography.headlineMedium)
-                        Text(text = "Movement: $lastAccel", style = MaterialTheme.typography.bodyMedium)
-                        Spacer(modifier = Modifier.height(16.dp))
-                        HRChart(heartRateData)
-                    }
-                }
+                MainScreen(currentHR, lastAccel, heartRateData)
             }
         }
     }
@@ -118,19 +123,129 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun MainScreen(currentHR: Float, lastAccel: String, heartRateData: List<Entry>) {
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = { Text("PRO Health Monitor", fontWeight = FontWeight.Bold) },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.primary
+                )
+            )
+        }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize()
+                .background(
+                    Brush.verticalGradient(
+                        colors = listOf(
+                            MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
+                            MaterialTheme.colorScheme.surface
+                        )
+                    )
+                )
+                .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                SensorCard(
+                    title = "Heart Rate",
+                    value = "${currentHR.toInt()}",
+                    unit = "BPM",
+                    icon = Icons.Default.Favorite,
+                    iconColor = Color.Red,
+                    modifier = Modifier.weight(1f)
+                )
+                SensorCard(
+                    title = "Movement",
+                    value = lastAccel.take(15), 
+                    unit = "",
+                    icon = Icons.Default.Speed,
+                    iconColor = Color.Blue,
+                    modifier = Modifier.weight(1f)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Card(
+                modifier = Modifier.fillMaxWidth().weight(1f),
+                shape = RoundedCornerShape(16.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Default.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Live Activity Chart", style = MaterialTheme.typography.titleMedium)
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    HRChart(heartRateData)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun SensorCard(title: String, value: String, unit: String, icon: ImageVector, iconColor: Color, modifier: Modifier = Modifier) {
+    Card(
+        modifier = modifier,
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Icon(icon, contentDescription = null, tint = iconColor, modifier = Modifier.size(32.dp))
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(title, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.outline)
+            Row(verticalAlignment = Alignment.Bottom) {
+                Text(value, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
+                if (unit.isNotEmpty()) {
+                    Text(unit, style = MaterialTheme.typography.labelSmall, modifier = Modifier.padding(start = 2.dp, bottom = 4.dp))
+                }
+            }
+        }
+    }
+}
+
 @Composable
 fun HRChart(entries: List<Entry>) {
+    val primaryColor = MaterialTheme.colorScheme.primary.toArgb()
     AndroidView(
-        modifier = Modifier.fillMaxWidth().height(300.dp),
+        modifier = Modifier.fillMaxSize(),
         factory = { context ->
             LineChart(context).apply {
                 description.isEnabled = false
                 setTouchEnabled(true)
-                setPinchZoom(true)
+                setPinchZoom(false)
+                xAxis.position = XAxis.XAxisPosition.BOTTOM
+                xAxis.setDrawGridLines(false)
+                axisRight.isEnabled = false
+                axisLeft.setDrawGridLines(true)
+                legend.isEnabled = false
             }
         },
         update = { chart ->
-            val dataSet = LineDataSet(entries, "Heart Rate")
+            val dataSet = LineDataSet(entries, "Heart Rate").apply {
+                color = primaryColor
+                setDrawCircles(true)
+                setCircleColor(primaryColor)
+                lineWidth = 3f
+                valueTextSize = 0f
+                setDrawFilled(true)
+                fillAlpha = 50
+                mode = LineDataSet.Mode.CUBIC_BEZIER
+            }
             chart.data = LineData(dataSet)
             chart.invalidate()
         }

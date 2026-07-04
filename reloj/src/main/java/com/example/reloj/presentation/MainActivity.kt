@@ -17,14 +17,29 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.LightMode
+import androidx.compose.material.icons.filled.Speed
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import androidx.wear.compose.foundation.lazy.TransformingLazyColumn
-import androidx.wear.compose.foundation.lazy.rememberTransformingLazyColumnState
-import androidx.wear.compose.material3.*
+import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
+import androidx.wear.compose.foundation.lazy.rememberScalingLazyColumnState
+import androidx.wear.compose.material3.AppScaffold
+import androidx.wear.compose.material3.Card
+import androidx.wear.compose.material3.EdgeButton
+import androidx.wear.compose.material3.Icon
+import androidx.wear.compose.material3.MaterialTheme
+import androidx.wear.compose.material3.ScreenScaffold
+import androidx.wear.compose.material3.Text
 import androidx.wear.compose.material3.lazy.rememberTransformationSpec
 import androidx.wear.compose.material3.lazy.transformedHeight
 import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
@@ -165,51 +180,83 @@ fun WearApp(
 ) {
     AplicacionPROTheme {
         AppScaffold {
-            val listState = rememberTransformingLazyColumnState()
-            val transformationSpec = rememberTransformationSpec()
+            val listState = rememberScalingLazyColumnState()
             ScreenScaffold(
                 scrollState = listState,
                 edgeButton = {
                     EdgeButton(
                         onClick = onToggleSensor,
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                            contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                        ),
                     ) {
-                        Text(if (activeSensor == Sensor.TYPE_ACCELEROMETER) "Use Light" else "Use Accel")
+                        Icon(
+                            if (activeSensor == Sensor.TYPE_ACCELEROMETER) Icons.Default.LightMode else Icons.Default.Speed,
+                            contentDescription = "Toggle"
+                        )
                     }
                 }
             ) { contentPadding ->
-                TransformingLazyColumn(contentPadding = contentPadding, state = listState) {
-                    item {
-                        ListHeader(
-                            modifier = Modifier.fillMaxWidth().transformedHeight(this, transformationSpec),
-                            transformation = SurfaceTransformation(transformationSpec),
-                        ) {
-                            Text(text = "Sensor Monitor")
-                        }
-                    }
+                ScalingLazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = contentPadding,
+                    state = listState,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     item {
                         Text(
-                            text = "HR: ${heartRate.toInt()} bpm",
-                            modifier = Modifier.fillMaxWidth().transformedHeight(this, transformationSpec)
+                            "Health PRO",
+                            style = MaterialTheme.typography.titleMedium,
+                            color = MaterialTheme.colorScheme.primary,
+                            fontWeight = FontWeight.Bold
                         )
                     }
+
+                    item {
+                        SensorChip(
+                            label = "Heart Rate",
+                            value = "${heartRate.toInt()} BPM",
+                            icon = Icons.Default.Favorite,
+                            iconColor = Color.Red
+                        )
+                    }
+
                     item {
                         if (activeSensor == Sensor.TYPE_ACCELEROMETER) {
-                            Text(
-                                text = "Accel: X:${"%.1f".format(accel[0])} Y:${"%.1f".format(accel[1])}",
-                                modifier = Modifier.fillMaxWidth().transformedHeight(this, transformationSpec)
+                            SensorChip(
+                                label = "Motion",
+                                value = "X:${"%.1f".format(accel[0])} Y:${"%.1f".format(accel[1])}",
+                                icon = Icons.Default.Speed,
+                                iconColor = Color.Blue
                             )
                         } else {
-                            Text(
-                                text = "Light: ${light.toInt()} lux",
-                                modifier = Modifier.fillMaxWidth().transformedHeight(this, transformationSpec)
+                            SensorChip(
+                                label = "Light",
+                                value = "${light.toInt()} Lux",
+                                icon = Icons.Default.LightMode,
+                                iconColor = Color.Yellow
                             )
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@Composable
+fun SensorChip(label: String, value: String, icon: ImageVector, iconColor: Color) {
+    Card(
+        modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+        onClick = {},
+        shape = RoundedCornerShape(20.dp),
+    ) {
+        Row(
+            modifier = Modifier.padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(icon, contentDescription = null, tint = iconColor)
+            Spacer(modifier = Modifier.width(8.dp))
+            Column {
+                Text(label, style = MaterialTheme.typography.labelSmall)
+                Text(value, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
             }
         }
     }
