@@ -1,15 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.services)
+    id("com.android.application")
+    id("com.google.gms.google-services")
 }
+
 
 android {
     namespace = "com.example.aplicacionpro"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.aplicacionpro"
@@ -50,6 +50,13 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.play.services.wearable)
     implementation(libs.mp.android.chart)
+    implementation(platform("com.google.firebase:firebase-bom:34.15.0"))
+
+
+//firebase
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)

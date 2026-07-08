@@ -1,12 +1,6 @@
-/* While this template provides a good starting point for using Wear Compose, you can always
- * take a look at https://github.com/android/wear-os-samples/tree/main/ComposeStarter to find the
- * most up to date changes to the libraries and their usages.
- */
-
 package com.example.reloj.presentation
 
 import android.Manifest
-import android.content.Context
 import android.content.pm.PackageManager
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -23,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.Speed
+import androidx.compose.material.icons.filled.Thermostat
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,51 +26,49 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
-import androidx.wear.compose.foundation.lazy.rememberScalingLazyColumnState
-import androidx.wear.compose.material3.AppScaffold
-import androidx.wear.compose.material3.Card
-import androidx.wear.compose.material3.EdgeButton
-import androidx.wear.compose.material3.Icon
-import androidx.wear.compose.material3.MaterialTheme
-import androidx.wear.compose.material3.ScreenScaffold
-import androidx.wear.compose.material3.Text
+import androidx.wear.compose.foundation.lazy.TransformingLazyColumn
+import androidx.wear.compose.foundation.lazy.rememberTransformingLazyColumnState
+import androidx.wear.compose.material3.*
 import androidx.wear.compose.material3.lazy.rememberTransformationSpec
 import androidx.wear.compose.material3.lazy.transformedHeight
 import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import androidx.wear.compose.ui.tooling.preview.WearPreviewFontScales
-import com.example.reloj.R
 import com.example.reloj.presentation.theme.AplicacionPROTheme
 import com.example.reloj.utils.WearableSender
+
+enum class SecondarySensor { ACCELEROMETER, LIGHT, TEMPERATURE }
 
 class MainActivity : ComponentActivity(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
     private var heartRateSensor: Sensor? = null
     private var accelSensor: Sensor? = null
     private var lightSensor: Sensor? = null
+    private var tempSensor: Sensor? = null
     private lateinit var wearableSender: WearableSender
 
-    private var heartRateValue by mutableStateOf(0f)
+    private var heartRateValue by mutableFloatStateOf(0f)
     private var accelValues by mutableStateOf(floatArrayOf(0f, 0f, 0f))
     private var lightValue by mutableStateOf(0f)
-    private var activeSensorType by mutableStateOf(Sensor.TYPE_ACCELEROMETER)
+    private var tempValue by mutableStateOf(0f)
+    private var activeSensor by mutableStateOf(SecondarySensor.ACCELEROMETER)
 
     private val requestPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()
+        ActivityResultContracts.RequestMultiplePermissions(),
     ) { permissions ->
         if (permissions[Manifest.permission.BODY_SENSORS] == true) {
             startSensors()
         } else {
-            Toast.makeText(this, "Permissions required for sensors", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Permissions required", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         heartRateSensor = sensorManager.getDefaultSensor(Sensor.TYPE_HEART_RATE)
         accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+        tempSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
         wearableSender = WearableSender(this)
 
         if (checkPermissions()) {
@@ -89,7 +82,8 @@ class MainActivity : ComponentActivity(), SensorEventListener {
                 heartRate = heartRateValue,
                 accel = accelValues,
                 light = lightValue,
-                activeSensor = activeSensorType,
+                temperature = tempValue,
+                activeSensor = activeSensor,
                 onToggleSensor = { toggleSecondSensor() }
             )
         }
@@ -109,34 +103,33 @@ class MainActivity : ComponentActivity(), SensorEventListener {
     }
 
     private fun startSensors() {
-        // Heart Rate is mandatory and always active (1st sensor)
         heartRateSensor?.let {
             sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_NORMAL)
         }
-        // Register the active second sensor
         registerSecondSensor()
     }
 
+    private fun sensorFor(type: SecondarySensor): Sensor? = when (type) {
+        SecondarySensor.ACCELEROMETER -> accelSensor
+        SecondarySensor.LIGHT -> lightSensor
+        SecondarySensor.TEMPERATURE -> tempSensor
+    }
+
     private fun registerSecondSensor() {
-        val sensor = if (activeSensorType == Sensor.TYPE_ACCELEROMETER) accelSensor else lightSensor
-        sensor?.let {
+        sensorFor(activeSensor)?.let {
             sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_NORMAL)
         }
     }
 
     private fun toggleSecondSensor() {
-        // Unregister current second sensor to keep only 2 active (HR + 1 other)
-        val currentSensor = if (activeSensorType == Sensor.TYPE_ACCELEROMETER) accelSensor else lightSensor
-        currentSensor?.let { sensorManager.unregisterListener(this, it) }
+        sensorFor(activeSensor)?.let { sensorManager.unregisterListener(this, it) }
 
-        // Switch type
-        activeSensorType = if (activeSensorType == Sensor.TYPE_ACCELEROMETER) {
-            Sensor.TYPE_LIGHT
-        } else {
-            Sensor.TYPE_ACCELEROMETER
+        activeSensor = when (activeSensor) {
+            SecondarySensor.ACCELEROMETER -> SecondarySensor.LIGHT
+            SecondarySensor.LIGHT -> SecondarySensor.TEMPERATURE
+            SecondarySensor.TEMPERATURE -> SecondarySensor.ACCELEROMETER
         }
 
-        // Register new second sensor
         registerSecondSensor()
     }
 
@@ -145,19 +138,16 @@ class MainActivity : ComponentActivity(), SensorEventListener {
             when (it.sensor.type) {
                 Sensor.TYPE_HEART_RATE -> {
                     heartRateValue = it.values[0]
-                    val secondData = if (activeSensorType == Sensor.TYPE_ACCELEROMETER) {
-                        "ACC:${accelValues.joinToString(",")}"
-                    } else {
-                        "LIGHT:$lightValue"
+                    val secondData = when (activeSensor) {
+                        SecondarySensor.ACCELEROMETER -> "ACC:${accelValues.joinToString(",")}"
+                        SecondarySensor.LIGHT -> "LIGHT:$lightValue"
+                        SecondarySensor.TEMPERATURE -> "TEMP:$tempValue"
                     }
                     wearableSender.sendSensorData(heartRateValue, secondData)
                 }
-                Sensor.TYPE_ACCELEROMETER -> {
-                    accelValues = it.values.clone()
-                }
-                Sensor.TYPE_LIGHT -> {
-                    lightValue = it.values[0]
-                }
+                Sensor.TYPE_ACCELEROMETER -> accelValues = it.values.clone()
+                Sensor.TYPE_LIGHT -> lightValue = it.values[0]
+                Sensor.TYPE_AMBIENT_TEMPERATURE -> tempValue = it.values[0]
             }
         }
     }
@@ -175,38 +165,35 @@ fun WearApp(
     heartRate: Float,
     accel: FloatArray,
     light: Float,
-    activeSensor: Int,
+    temperature: Float,
+    activeSensor: SecondarySensor,
     onToggleSensor: () -> Unit
 ) {
     AplicacionPROTheme {
         AppScaffold {
-            val listState = rememberScalingLazyColumnState()
+            val listState = rememberTransformingLazyColumnState()
+            val transformationSpec = rememberTransformationSpec()
             ScreenScaffold(
                 scrollState = listState,
                 edgeButton = {
-                    EdgeButton(
-                        onClick = onToggleSensor,
-                    ) {
-                        Icon(
-                            if (activeSensor == Sensor.TYPE_ACCELEROMETER) Icons.Default.LightMode else Icons.Default.Speed,
-                            contentDescription = "Toggle"
-                        )
+                    EdgeButton(onClick = onToggleSensor) {
+                        Icon(iconFor(activeSensor), contentDescription = "Toggle")
                     }
                 }
             ) { contentPadding ->
-                ScalingLazyColumn(
+                TransformingLazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = contentPadding,
                     state = listState,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     item {
-                        Text(
-                            "Health PRO",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.primary,
-                            fontWeight = FontWeight.Bold
-                        )
+                        ListHeader(
+                            modifier = Modifier.fillMaxWidth().transformedHeight(this, transformationSpec),
+                            transformation = SurfaceTransformation(transformationSpec),
+                        ) {
+                            Text("Health PRO", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+                        }
                     }
 
                     item {
@@ -214,24 +201,29 @@ fun WearApp(
                             label = "Heart Rate",
                             value = "${heartRate.toInt()} BPM",
                             icon = Icons.Default.Favorite,
-                            iconColor = Color.Red
+                            iconColor = Color(0xFFE53935)
                         )
                     }
 
                     item {
-                        if (activeSensor == Sensor.TYPE_ACCELEROMETER) {
-                            SensorChip(
+                        when (activeSensor) {
+                            SecondarySensor.ACCELEROMETER -> SensorChip(
                                 label = "Motion",
                                 value = "X:${"%.1f".format(accel[0])} Y:${"%.1f".format(accel[1])}",
                                 icon = Icons.Default.Speed,
-                                iconColor = Color.Blue
+                                iconColor = Color(0xFF1E88E5)
                             )
-                        } else {
-                            SensorChip(
+                            SecondarySensor.LIGHT -> SensorChip(
                                 label = "Light",
-                                value = "${light.toInt()} Lux",
+                                value = "${light.toInt()} lux",
                                 icon = Icons.Default.LightMode,
-                                iconColor = Color.Yellow
+                                iconColor = Color(0xFFFDD835)
+                            )
+                            SecondarySensor.TEMPERATURE -> SensorChip(
+                                label = "Temperature",
+                                value = "${"%.1f".format(temperature)} °C",
+                                icon = Icons.Default.Thermostat,
+                                iconColor = Color(0xFFFF7043)
                             )
                         }
                     }
@@ -239,6 +231,12 @@ fun WearApp(
             }
         }
     }
+}
+
+private fun iconFor(sensor: SecondarySensor): ImageVector = when (sensor) {
+    SecondarySensor.ACCELEROMETER -> Icons.Default.LightMode
+    SecondarySensor.LIGHT -> Icons.Default.Thermostat
+    SecondarySensor.TEMPERATURE -> Icons.Default.Speed
 }
 
 @Composable
@@ -266,5 +264,8 @@ fun SensorChip(label: String, value: String, icon: ImageVector, iconColor: Color
 @WearPreviewFontScales
 @Composable
 fun DefaultPreview() {
-    WearApp(75f, floatArrayOf(0f, 0f, 0f), 100f, Sensor.TYPE_ACCELEROMETER, {})
+    WearApp(75f, floatArrayOf(0f, 0f, 0f), 100f, 22.5f, SecondarySensor.ACCELEROMETER) {
+        // onClick toggle mock
+    }
 }
+

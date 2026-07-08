@@ -1,23 +1,28 @@
 package com.example.aplicacionpro
 
+import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CloudDone
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -26,9 +31,10 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
+import com.example.aplicacionpro.data.FirebaseSensorRepository
 import com.example.aplicacionpro.ui.theme.AplicacionPROTheme
 import com.example.aplicacionpro.utils.CryptoUtils
 import com.github.mikephil.charting.charts.LineChart
@@ -37,24 +43,42 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.google.android.gms.wearable.DataClient
+import com.google.android.gms.wearable.DataEvent
 import com.google.android.gms.wearable.DataEventBuffer
 import com.google.android.gms.wearable.DataMapItem
-import com.google.android.gms.wearable.DataEvent
 import com.google.android.gms.wearable.Wearable
 
 class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
     private var heartRateData = mutableStateListOf<Entry>()
-    private var currentHR by mutableStateOf(0f)
+    private var currentHR by mutableFloatStateOf(0f)
     private var lastAccel by mutableStateOf("N/A")
+    private val firebaseRepo = FirebaseSensorRepository()
+
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (!isGranted) {
+            Log.w("MainActivity", "Notification permission denied")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         createNotificationChannel()
+        checkNotificationPermission()
 
         setContent {
             AplicacionPROTheme {
                 MainScreen(currentHR, lastAccel, heartRateData)
+            }
+        }
+    }
+
+    private fun checkNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
         }
     }
@@ -71,15 +95,14 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
 
     override fun onDataChanged(dataEvents: DataEventBuffer) {
         dataEvents.forEach { event ->
-            if (event.type == DataEvent.TYPE_CHANGED && event.dataItem.uri.path == "/sensor_data") {
+            if (event.type == DataEvent.TYPE_CHANGED && (event.dataItem.uri.path == "/sensor_data")) {
                 val dataMap = DataMapItem.fromDataItem(event.dataItem).dataMap
                 val encryptedPayload = dataMap.getString("payload") ?: return@forEach
                 try {
                     val decrypted = CryptoUtils.decrypt(encryptedPayload)
-                    // Format: HR:X;ACC:X,Y,Z
                     val parts = decrypted.split(";")
                     val hrPart = parts[0].substringAfter("HR:").toFloat()
-                    val secondPart = parts[1]
+                    val secondPart = parts[1] // Format: LABEL:VALUE
 
                     currentHR = hrPart
                     lastAccel = secondPart
@@ -87,11 +110,16 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
                     heartRateData.add(Entry(heartRateData.size.toFloat(), hrPart))
                     if (heartRateData.size > 20) heartRateData.removeAt(0)
 
+                    // Subir a Firebase Realtime Database
+                    val sensorLabel = secondPart.substringBefore(":")
+                    val sensorValue = secondPart.substringAfter(":")
+                    firebaseRepo.uploadReading(hrPart, sensorLabel, sensorValue)
+
                     if (hrPart > 120) {
                         sendAlertNotification(hrPart)
                     }
                 } catch (e: Exception) {
-                    Log.e("MainActivity", "Decryption failed", e)
+                    Log.e("MainActivity", "Error processing data", e)
                 }
             }
         }
@@ -100,13 +128,9 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "HR Alerts"
-            val descriptionText = "Notifications for high heart rate"
             val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel("HR_CHANNEL", name, importance).apply {
-                description = descriptionText
-            }
-            val notificationManager: NotificationManager =
-                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val channel = NotificationChannel("HR_CHANNEL", name, importance)
+            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
     }
@@ -118,7 +142,7 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
             .setContentText("Your heart rate is $hr BPM. Please rest.")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
 
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(1, builder.build())
     }
 }
@@ -131,7 +155,15 @@ fun MainScreen(currentHR: Float, lastAccel: String, heartRateData: List<Entry>) 
         topBar = {
             CenterAlignedTopAppBar(
                 title = { Text("PRO Health Monitor", fontWeight = FontWeight.Bold) },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                actions = {
+                    Icon(
+                        Icons.Default.CloudDone,
+                        contentDescription = "Firebase Connected",
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(end = 16.dp)
+                    )
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary
                 )
@@ -156,16 +188,16 @@ fun MainScreen(currentHR: Float, lastAccel: String, heartRateData: List<Entry>) 
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                 SensorCard(
                     title = "Heart Rate",
-                    value = "${currentHR.toInt()}",
+                    value = currentHR.toInt().toString(),
                     unit = "BPM",
                     icon = Icons.Default.Favorite,
                     iconColor = Color.Red,
                     modifier = Modifier.weight(1f)
                 )
                 SensorCard(
-                    title = "Movement",
-                    value = lastAccel.take(15), 
-                    unit = "",
+                    title = "Secondary",
+                    value = lastAccel.substringAfter(":").take(10),
+                    unit = lastAccel.substringBefore(":"),
                     icon = Icons.Default.Speed,
                     iconColor = Color.Blue,
                     modifier = Modifier.weight(1f)
