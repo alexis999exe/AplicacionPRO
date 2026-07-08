@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.reloj-mergeDebugResources-51:/values-night-v33/values-night-v33.xml",
+            "map": [
+                {
+                    "source": "/Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1c4f9b3643a560a0dc130dc670434361/transformed/core-splashscreen-1.2.0/res/values-night-v33/values-night-v33.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "215"
+                    }
+                }
+            ]
+        }
+    ]
+}

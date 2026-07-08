@@ -1,0 +1,524 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
+MERGED from [androidx.wear.compose:compose-material-core:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a2925cfaaef2468f358c268c6be35d9a/transformed/compose-material-core-1.6.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.wear.compose:compose-ui-tooling:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/cf5dbae20aea7d88e251b67357242378/transformed/compose-ui-tooling-1.6.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.wear.compose:compose-material3:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/88a6a43afc2fac539ad9d83bf6da3844/transformed/compose-material3-1.6.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.material:material-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/76ba5189261ce9d932363ef9ff11974b/transformed/material/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/0d0b2021c56fd5e6bafd17552fa67933/transformed/animation-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-graphics-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/ca2b0da407da04be5b368f75970683bc/transformed/animation-graphics/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/689452dac4e77e7a29ba329e90138d1f/transformed/material-ripple/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/216568521ce7e0a19883adb73cea7a9e/transformed/animation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/21c8a65ab7787557f89e8349c2d3d9cb/transformed/foundation-layout/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b1515eec178efd8df73c8445c57e3a22/transformed/foundation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dd60ff41c9384525c20b667a2d11934a/transformed/ui-tooling-data/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/bdf565c47154a2873bca92485d546951/transformed/ui-unit/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6e14fb262f91e6eec38d237386bf9023/transformed/ui-geometry/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/c5c5c90671772ef21c4c6239cf76a92e/transformed/ui-text/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/59226e935ba24db1def2bd93bc007204/transformed/ui-util/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/948325eb25d36464610dbc41c25b83e8/transformed/ui-tooling-preview/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/82274c9b08152d2cd02fa5622faf8397/transformed/ui-graphics/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/19969c99f3b880ce68dd2feace8e155d/transformed/navigationevent/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f0ee6c7dbd4e9c59828cfac972ce0d05/transformed/navigationevent-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/12603e9eace4ba8891d4d3c32ee1cccd/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/721e2013db29e7afdcfcc77876ede9b7/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/099e3f26a7dbab89c5dc9720a499bdc8/transformed/ui/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-wearable:20.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/240f9ae81f138562347b74a365f764b0/transformed/play-services-wearable-20.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/29bc4303e2845e2adda73e4e11a06d2d/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/36301703756350f80482a088779f1456/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/de1c750778e84c5ac2d197f3168b7496/transformed/activity-ktx-1.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b36cdf1d5c189a5108e3f955004a3688/transformed/activity-1.13.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e615cea16f9cb230bb55325186a897fe/transformed/activity-compose-1.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-splashscreen:1.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1c4f9b3643a560a0dc130dc670434361/transformed/core-splashscreen-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.wear:wear-tooling-preview:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5630fe1672a5bf9c8963624530004134/transformed/wear-tooling-preview-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:14:1-34:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/642ed473d6224163423b7b690e16f664/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/2f154260a05a12deb97caeb5d9762604/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/eb1468ff7ade25602288fd7c792b2bcc/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5a7d797dc97006806a049051326c4ebe/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.6.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/82d230684e5e103f969d3931bf0269c4/transformed/transition-1.6.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window-core-android:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/0d66e22274f5b93d0b18aa938fb29071/transformed/window-core/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/98eb32934ddb68d6b6d914ebe6773665/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/594424e72d5f26f63cac1bd57b481c52/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f43022a01a5717458bc6254746de84bd/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f1b09acb25a094996f9c0f48a9e307b7/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/eb0916c2b74574fdc1cf71e939a4d743/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/436f8d7e415f3dc91c0a4f8a2936e583/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.graphics:graphics-shapes-android:1.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42c28073d8416356e1797649e1896394/transformed/graphics-shapes-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/935c3267b7ad8dd5652598dea536119d/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/740f67a6df0648ebabab0e831ed8148c/transformed/lifecycle-livedata-core-ktx-2.9.4/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b140feab25375c83c66f19b91114a936/transformed/lifecycle-livedata-core-2.9.4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a86a014b87a07aa384eb1d2b00a059f5/transformed/lifecycle-livedata-2.9.4/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/4503425b689dd995845f5c3c4bb807f8/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a7e9b3ae2b71cf97615d12b686535545/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/63ab5f9d248d718a4e7b6a6b0a57d663/transformed/lifecycle-viewmodel-2.9.4/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/27c6dde8dec12dae93034fc7a126567f/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b75caac3a2f74e568f43c4b330cea84f/transformed/runtime-annotation/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1087c8bfaf7b179a40f98cab9140a1b4/transformed/runtime-retain/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-android:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/206e31a3616dd4ba6e2b34d1cb43828c/transformed/savedstate-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/aed75c85613fb9dd7d65438a04ce5275/transformed/savedstate-ktx-1.3.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-compose-android:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d3110a1e49c09ad38ec99bbad2cfa5a7/transformed/savedstate-compose/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f597c351175e774e21e1b833450b3218/transformed/runtime/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/4df6148c2a8b53e83c25053a6f6104ae/transformed/runtime-saveable/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/45aa685d1a1f5f0f1f51d2dc0dad10bf/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b13d5ee7651dba7654795e665773f7d2/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/ad833073d004bb838f9516763da37f26/transformed/lifecycle-viewmodel-savedstate-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/18783e3a908bf7653668cc93fc596c88/transformed/core-ktx-1.18.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core-viewtree:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dc712a9c2ef6d6d459bca1300add77dc/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/878ff38a1da7e6c35d41f548b3e449a9/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5eade9225bac988f54140a30cdd98377/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/8cca8cc04cf275c85d5df87503add9d6/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1059af33d42516e10687bfa5b6d8d33e/transformed/tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/9f8c8e21396a2db22bbc586088146c53/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/2dce2b293a3dbe6adff505ba67b9ffce/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3ca7fa7678ea63282954638dc3a50d94/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/c789652f43322a72bdb0692e1664ca0c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3af350f573530763b5666fa491da1804/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:4:5-68
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:4:22-65
+uses-permission#android.permission.BODY_SENSORS
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:5:5-71
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:5:22-68
+uses-permission#android.permission.ACTIVITY_RECOGNITION
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:6:22-76
+uses-feature#android.hardware.type.watch
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:8:5-64
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:8:19-61
+application
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:10:5-38:19
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:10:5-38:19
+MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:22:5-27:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-wearable:20.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/240f9ae81f138562347b74a365f764b0/transformed/play-services-wearable-20.0.1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-wearable:20.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/240f9ae81f138562347b74a365f764b0/transformed/play-services-wearable-20.0.1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/29bc4303e2845e2adda73e4e11a06d2d/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/29bc4303e2845e2adda73e4e11a06d2d/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:23:5-32:19
+MERGED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:23:5-32:19
+MERGED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5eade9225bac988f54140a30cdd98377/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5eade9225bac988f54140a30cdd98377/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/8cca8cc04cf275c85d5df87503add9d6/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/8cca8cc04cf275c85d5df87503add9d6/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:13:9-41
+	android:icon
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:12:9-56
+	android:allowBackup
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:15:9-59
+uses-library#com.google.android.wearable
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:17:9-19:39
+	android:required
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:19:13-36
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:18:13-55
+uses-library#wear-sdk
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:20:9-22:40
+MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:23:9-25:40
+MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:21:13-36
+meta-data#com.google.android.wearable.standalone
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:24:9-26:36
+	android:value
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:26:13-33
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:25:13-66
+activity#com.example.reloj.presentation.MainActivity
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:28:9-37:20
+	android:exported
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:30:13-36
+	android:theme
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:32:13-62
+	android:taskAffinity
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:29:13-54
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:33:13-36:29
+action#android.intent.action.MAIN
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:34:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:35:17-77
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:35:27-74
+uses-sdk
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+MERGED from [androidx.wear.compose:compose-material-core:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a2925cfaaef2468f358c268c6be35d9a/transformed/compose-material-core-1.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.wear.compose:compose-material-core:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a2925cfaaef2468f358c268c6be35d9a/transformed/compose-material-core-1.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.wear.compose:compose-ui-tooling:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/cf5dbae20aea7d88e251b67357242378/transformed/compose-ui-tooling-1.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.wear.compose:compose-ui-tooling:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/cf5dbae20aea7d88e251b67357242378/transformed/compose-ui-tooling-1.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.wear.compose:compose-material3:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/88a6a43afc2fac539ad9d83bf6da3844/transformed/compose-material3-1.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.wear.compose:compose-material3:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/88a6a43afc2fac539ad9d83bf6da3844/transformed/compose-material3-1.6.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/76ba5189261ce9d932363ef9ff11974b/transformed/material/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/76ba5189261ce9d932363ef9ff11974b/transformed/material/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/0d0b2021c56fd5e6bafd17552fa67933/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/0d0b2021c56fd5e6bafd17552fa67933/transformed/animation-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-graphics-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/ca2b0da407da04be5b368f75970683bc/transformed/animation-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-graphics-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/ca2b0da407da04be5b368f75970683bc/transformed/animation-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/689452dac4e77e7a29ba329e90138d1f/transformed/material-ripple/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/689452dac4e77e7a29ba329e90138d1f/transformed/material-ripple/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/216568521ce7e0a19883adb73cea7a9e/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/216568521ce7e0a19883adb73cea7a9e/transformed/animation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/21c8a65ab7787557f89e8349c2d3d9cb/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/21c8a65ab7787557f89e8349c2d3d9cb/transformed/foundation-layout/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b1515eec178efd8df73c8445c57e3a22/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b1515eec178efd8df73c8445c57e3a22/transformed/foundation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dd60ff41c9384525c20b667a2d11934a/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dd60ff41c9384525c20b667a2d11934a/transformed/ui-tooling-data/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/bdf565c47154a2873bca92485d546951/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/bdf565c47154a2873bca92485d546951/transformed/ui-unit/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6e14fb262f91e6eec38d237386bf9023/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6e14fb262f91e6eec38d237386bf9023/transformed/ui-geometry/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/c5c5c90671772ef21c4c6239cf76a92e/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/c5c5c90671772ef21c4c6239cf76a92e/transformed/ui-text/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/59226e935ba24db1def2bd93bc007204/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/59226e935ba24db1def2bd93bc007204/transformed/ui-util/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/948325eb25d36464610dbc41c25b83e8/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/948325eb25d36464610dbc41c25b83e8/transformed/ui-tooling-preview/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/82274c9b08152d2cd02fa5622faf8397/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/82274c9b08152d2cd02fa5622faf8397/transformed/ui-graphics/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/19969c99f3b880ce68dd2feace8e155d/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-android:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/19969c99f3b880ce68dd2feace8e155d/transformed/navigationevent/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f0ee6c7dbd4e9c59828cfac972ce0d05/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigationevent:navigationevent-compose-android:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f0ee6c7dbd4e9c59828cfac972ce0d05/transformed/navigationevent-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/12603e9eace4ba8891d4d3c32ee1cccd/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.7.8] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/12603e9eace4ba8891d4d3c32ee1cccd/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/721e2013db29e7afdcfcc77876ede9b7/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.7.8] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/721e2013db29e7afdcfcc77876ede9b7/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/099e3f26a7dbab89c5dc9720a499bdc8/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/099e3f26a7dbab89c5dc9720a499bdc8/transformed/ui/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wearable:20.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/240f9ae81f138562347b74a365f764b0/transformed/play-services-wearable-20.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-wearable:20.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/240f9ae81f138562347b74a365f764b0/transformed/play-services-wearable-20.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/29bc4303e2845e2adda73e4e11a06d2d/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/29bc4303e2845e2adda73e4e11a06d2d/transformed/play-services-tasks-18.2.0/AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/36301703756350f80482a088779f1456/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/36301703756350f80482a088779f1456/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/de1c750778e84c5ac2d197f3168b7496/transformed/activity-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/de1c750778e84c5ac2d197f3168b7496/transformed/activity-ktx-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b36cdf1d5c189a5108e3f955004a3688/transformed/activity-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b36cdf1d5c189a5108e3f955004a3688/transformed/activity-1.13.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e615cea16f9cb230bb55325186a897fe/transformed/activity-compose-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.13.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e615cea16f9cb230bb55325186a897fe/transformed/activity-compose-1.13.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-splashscreen:1.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1c4f9b3643a560a0dc130dc670434361/transformed/core-splashscreen-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-splashscreen:1.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1c4f9b3643a560a0dc130dc670434361/transformed/core-splashscreen-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.wear:wear-tooling-preview:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5630fe1672a5bf9c8963624530004134/transformed/wear-tooling-preview-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.wear:wear-tooling-preview:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5630fe1672a5bf9c8963624530004134/transformed/wear-tooling-preview-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:17:5-44
+MERGED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:17:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/642ed473d6224163423b7b690e16f664/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/642ed473d6224163423b7b690e16f664/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/2f154260a05a12deb97caeb5d9762604/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/2f154260a05a12deb97caeb5d9762604/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/eb1468ff7ade25602288fd7c792b2bcc/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/eb1468ff7ade25602288fd7c792b2bcc/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5a7d797dc97006806a049051326c4ebe/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5a7d797dc97006806a049051326c4ebe/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.6.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/82d230684e5e103f969d3931bf0269c4/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.6.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/82d230684e5e103f969d3931bf0269c4/transformed/transition-1.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-core-android:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/0d66e22274f5b93d0b18aa938fb29071/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window-core-android:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/0d66e22274f5b93d0b18aa938fb29071/transformed/window-core/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/98eb32934ddb68d6b6d914ebe6773665/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/98eb32934ddb68d6b6d914ebe6773665/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/594424e72d5f26f63cac1bd57b481c52/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/594424e72d5f26f63cac1bd57b481c52/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f43022a01a5717458bc6254746de84bd/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f43022a01a5717458bc6254746de84bd/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f1b09acb25a094996f9c0f48a9e307b7/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f1b09acb25a094996f9c0f48a9e307b7/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/eb0916c2b74574fdc1cf71e939a4d743/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/eb0916c2b74574fdc1cf71e939a4d743/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/436f8d7e415f3dc91c0a4f8a2936e583/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/436f8d7e415f3dc91c0a4f8a2936e583/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.graphics:graphics-shapes-android:1.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42c28073d8416356e1797649e1896394/transformed/graphics-shapes-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-shapes-android:1.0.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42c28073d8416356e1797649e1896394/transformed/graphics-shapes-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/935c3267b7ad8dd5652598dea536119d/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/935c3267b7ad8dd5652598dea536119d/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/740f67a6df0648ebabab0e831ed8148c/transformed/lifecycle-livedata-core-ktx-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/740f67a6df0648ebabab0e831ed8148c/transformed/lifecycle-livedata-core-ktx-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b140feab25375c83c66f19b91114a936/transformed/lifecycle-livedata-core-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b140feab25375c83c66f19b91114a936/transformed/lifecycle-livedata-core-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a86a014b87a07aa384eb1d2b00a059f5/transformed/lifecycle-livedata-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a86a014b87a07aa384eb1d2b00a059f5/transformed/lifecycle-livedata-2.9.4/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/4503425b689dd995845f5c3c4bb807f8/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/4503425b689dd995845f5c3c4bb807f8/transformed/lifecycle-runtime-ktx/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a7e9b3ae2b71cf97615d12b686535545/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a7e9b3ae2b71cf97615d12b686535545/transformed/lifecycle-viewmodel-ktx-2.9.4/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/63ab5f9d248d718a4e7b6a6b0a57d663/transformed/lifecycle-viewmodel-2.9.4/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/63ab5f9d248d718a4e7b6a6b0a57d663/transformed/lifecycle-viewmodel-2.9.4/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/27c6dde8dec12dae93034fc7a126567f/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/27c6dde8dec12dae93034fc7a126567f/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b75caac3a2f74e568f43c4b330cea84f/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-annotation-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b75caac3a2f74e568f43c4b330cea84f/transformed/runtime-annotation/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1087c8bfaf7b179a40f98cab9140a1b4/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-retain-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1087c8bfaf7b179a40f98cab9140a1b4/transformed/runtime-retain/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/206e31a3616dd4ba6e2b34d1cb43828c/transformed/savedstate-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/206e31a3616dd4ba6e2b34d1cb43828c/transformed/savedstate-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/aed75c85613fb9dd7d65438a04ce5275/transformed/savedstate-ktx-1.3.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/aed75c85613fb9dd7d65438a04ce5275/transformed/savedstate-ktx-1.3.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d3110a1e49c09ad38ec99bbad2cfa5a7/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-compose-android:1.3.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d3110a1e49c09ad38ec99bbad2cfa5a7/transformed/savedstate-compose/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f597c351175e774e21e1b833450b3218/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f597c351175e774e21e1b833450b3218/transformed/runtime/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/4df6148c2a8b53e83c25053a6f6104ae/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/4df6148c2a8b53e83c25053a6f6104ae/transformed/runtime-saveable/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/45aa685d1a1f5f0f1f51d2dc0dad10bf/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/45aa685d1a1f5f0f1f51d2dc0dad10bf/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b13d5ee7651dba7654795e665773f7d2/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/b13d5ee7651dba7654795e665773f7d2/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/ad833073d004bb838f9516763da37f26/transformed/lifecycle-viewmodel-savedstate-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/ad833073d004bb838f9516763da37f26/transformed/lifecycle-viewmodel-savedstate-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/18783e3a908bf7653668cc93fc596c88/transformed/core-ktx-1.18.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/18783e3a908bf7653668cc93fc596c88/transformed/core-ktx-1.18.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dc712a9c2ef6d6d459bca1300add77dc/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dc712a9c2ef6d6d459bca1300add77dc/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/878ff38a1da7e6c35d41f548b3e449a9/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/878ff38a1da7e6c35d41f548b3e449a9/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5eade9225bac988f54140a30cdd98377/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/5eade9225bac988f54140a30cdd98377/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/8cca8cc04cf275c85d5df87503add9d6/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/8cca8cc04cf275c85d5df87503add9d6/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1059af33d42516e10687bfa5b6d8d33e/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1059af33d42516e10687bfa5b6d8d33e/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/9f8c8e21396a2db22bbc586088146c53/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/9f8c8e21396a2db22bbc586088146c53/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/2dce2b293a3dbe6adff505ba67b9ffce/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/2dce2b293a3dbe6adff505ba67b9ffce/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3ca7fa7678ea63282954638dc3a50d94/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3ca7fa7678ea63282954638dc3a50d94/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/c789652f43322a72bdb0692e1664ca0c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/c789652f43322a72bdb0692e1664ca0c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3af350f573530763b5666fa491da1804/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3af350f573530763b5666fa491da1804/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:24:13-71
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:23:9-26:79
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:25:13-36
+	android:theme
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:26:13-76
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/6f1debe9118e276c127f210579b08b37/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:24:13-63
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3081f29b7cdb3395a6aafb7634b10926/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.9.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/79638e427e8e776c14120c015dd8cd1d/transformed/play-services-basement-18.9.0/AndroidManifest.xml:22:13-58
+queries
+ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:19:5-21:15
+package#com.google.android.wearable.healthservices
+ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:20:9-78
+	android:name
+		ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:20:18-75
+service#androidx.health.services.client.VersionApiService
+ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:24:9-31:19
+	android:exported
+		ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:26:13-36
+	android:permission
+		ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:27:13-108
+	android:name
+		ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:25:13-77
+intent-filter#action:name:hs.versionclient.BIND
+ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:28:13-30:29
+action#hs.versionclient.BIND
+ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:29:17-64
+	android:name
+		ADDED from [androidx.health:health-services-client:1.1.0-alpha03] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/f281d82a1041af84bffb30c54db83727/transformed/health-services-client-1.1.0-alpha03/AndroidManifest.xml:29:25-61
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.window:window:1.5.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/e5e0bb6c0a910f70a6e219886a1e8e6d/transformed/window-1.5.0/AndroidManifest.xml:27:13-51
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/8cca8cc04cf275c85d5df87503add9d6/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/8cca8cc04cf275c85d5df87503add9d6/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/559ada0d9927f860a8317c6d695417c1/transformed/emoji2-1.4.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:23:9-81
+permission#com.example.reloj.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.reloj.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.9.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/d000130b7d6a002110cbbba72337b05e/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/3eb72964ae49ebae14530ccae69f00b9/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92

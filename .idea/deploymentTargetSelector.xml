@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2026-07-06T18:12:24.187948Z">
+        <DropdownSelection timestamp="2026-07-08T17:33:43.550572Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=RFGYA0GMRTW" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=R5CX340NPMM" />
             </handle>
           </Target>
         </DropdownSelection>
@@ -15,10 +15,10 @@
       </SelectionState>
       <SelectionState runConfigName="reloj">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2026-07-08T00:40:43.703561Z">
+        <DropdownSelection timestamp="2026-07-08T16:43:27.731327Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=RFAX50968QK" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/ernestoalexisnievesbonilla/.android/avd/Wear_OS_Large_Round.avd" />
             </handle>
           </Target>
         </DropdownSelection>

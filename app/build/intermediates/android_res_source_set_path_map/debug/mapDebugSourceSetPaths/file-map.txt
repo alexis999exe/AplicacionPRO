@@ -1,0 +1,9 @@
+com.example.aplicacionpro.app-pngs-0 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/build/generated/res/pngs/debug
+com.example.aplicacionpro.app-res-1 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/build/generated/res/processDebugGoogleServices
+com.example.aplicacionpro.app-updated_navigation_xml-2 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/build/generated/updated_navigation_xml/debug
+com.example.aplicacionpro.app-packageDebugResources-3 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.aplicacionpro.app-packageDebugResources-4 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.aplicacionpro.app-debug-5 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.aplicacionpro.app-debug-6 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/src/debug/res
+com.example.aplicacionpro.app-main-7 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/app/src/main/res
+gradleHome-0 /Users/ernestoalexisnievesbonilla/.gradle

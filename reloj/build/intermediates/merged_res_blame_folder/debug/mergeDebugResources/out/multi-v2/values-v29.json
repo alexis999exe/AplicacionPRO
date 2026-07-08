@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.reloj-mergeDebugResources-51:/values-v29/values-v29.xml",
+            "map": [
+                {
+                    "source": "/Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/1c4f9b3643a560a0dc130dc670434361/transformed/core-splashscreen-1.2.0/res/values-v29/values-v29.xml",
+                    "from": {
+                        "startLines": "2,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,442",
+                        "endLines": "7,8",
+                        "endColumns": "12,82",
+                        "endOffsets": "437,520"
+                    }
+                }
+            ]
+        }
+    ]
+}

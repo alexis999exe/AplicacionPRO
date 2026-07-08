@@ -1,0 +1,8 @@
+com.example.reloj-pngs-0 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/build/generated/res/pngs/debug
+com.example.reloj-updated_navigation_xml-1 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/build/generated/updated_navigation_xml/debug
+com.example.reloj-packageDebugResources-2 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.reloj-packageDebugResources-3 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.reloj-debug-4 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.reloj-debug-5 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/debug/res
+com.example.reloj-main-6 /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/res
+gradleHome-0 /Users/ernestoalexisnievesbonilla/.gradle

@@ -1,0 +1,3 @@
+com.example.reloj
+string app_name
+style MainActivityTheme_Starting

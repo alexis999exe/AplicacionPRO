@@ -1,30 +1,32 @@
 package com.example.aplicacionpro
 
-import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.content.pm.PackageManager
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CloudDone
+import androidx.compose.material.icons.filled.CloudOff
+import androidx.compose.material.icons.filled.DirectionsWalk
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
@@ -33,8 +35,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.app.NotificationCompat
-import androidx.core.content.ContextCompat
-import com.example.aplicacionpro.data.FirebaseSensorRepository
+import com.example.aplicacionpro.data.FirebaseRepository
 import com.example.aplicacionpro.ui.theme.AplicacionPROTheme
 import com.example.aplicacionpro.utils.CryptoUtils
 import com.github.mikephil.charting.charts.LineChart
@@ -43,42 +44,28 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.google.android.gms.wearable.DataClient
-import com.google.android.gms.wearable.DataEvent
 import com.google.android.gms.wearable.DataEventBuffer
 import com.google.android.gms.wearable.DataMapItem
+import com.google.android.gms.wearable.DataEvent
 import com.google.android.gms.wearable.Wearable
 
 class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
     private var heartRateData = mutableStateListOf<Entry>()
-    private var currentHR by mutableFloatStateOf(0f)
+    private var currentHR by mutableStateOf(0f)
     private var lastAccel by mutableStateOf("N/A")
-    private val firebaseRepo = FirebaseSensorRepository()
+    private var currentSteps by mutableStateOf(0L)
+    private var isSynced by mutableStateOf<Boolean?>(null) // null = sin datos aún
 
-    private val requestPermissionLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { isGranted ->
-        if (!isGranted) {
-            Log.w("MainActivity", "Notification permission denied")
-        }
-    }
+    private val firebaseRepository = FirebaseRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         createNotificationChannel()
-        checkNotificationPermission()
 
         setContent {
             AplicacionPROTheme {
-                MainScreen(currentHR, lastAccel, heartRateData)
-            }
-        }
-    }
-
-    private fun checkNotificationPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                MainScreen(currentHR, lastAccel, currentSteps, heartRateData, isSynced)
             }
         }
     }
@@ -95,42 +82,73 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
 
     override fun onDataChanged(dataEvents: DataEventBuffer) {
         dataEvents.forEach { event ->
-            if (event.type == DataEvent.TYPE_CHANGED && (event.dataItem.uri.path == "/sensor_data")) {
+            if (event.type == DataEvent.TYPE_CHANGED && event.dataItem.uri.path == "/sensor_data") {
                 val dataMap = DataMapItem.fromDataItem(event.dataItem).dataMap
                 val encryptedPayload = dataMap.getString("payload") ?: return@forEach
                 try {
                     val decrypted = CryptoUtils.decrypt(encryptedPayload)
-                    val parts = decrypted.split(";")
-                    val hrPart = parts[0].substringAfter("HR:").toFloat()
-                    val secondPart = parts[1] // Format: LABEL:VALUE
+                    val fields = parsePayload(decrypted)
+
+                    val hrPart = fields["HR"]?.toFloatOrNull() ?: return@forEach
+                    val secondLabel: String
+                    val secondValue: String
+                    if (fields.containsKey("ACC")) {
+                        secondLabel = "ACC"
+                        secondValue = fields["ACC"] ?: ""
+                        lastAccel = "ACC:$secondValue"
+                    } else if (fields.containsKey("LIGHT")) {
+                        secondLabel = "LIGHT"
+                        secondValue = fields["LIGHT"] ?: ""
+                        lastAccel = "LIGHT:$secondValue"
+                    } else {
+                        secondLabel = "N/A"
+                        secondValue = ""
+                    }
+                    val steps = fields["STEPS"]?.toLongOrNull() ?: currentSteps
 
                     currentHR = hrPart
-                    lastAccel = secondPart
+                    currentSteps = steps
 
                     heartRateData.add(Entry(heartRateData.size.toFloat(), hrPart))
                     if (heartRateData.size > 20) heartRateData.removeAt(0)
 
-                    // Subir a Firebase Realtime Database
-                    val sensorLabel = secondPart.substringBefore(":")
-                    val sensorValue = secondPart.substringAfter(":")
-                    firebaseRepo.uploadReading(hrPart, sensorLabel, sensorValue)
-
                     if (hrPart > 120) {
                         sendAlertNotification(hrPart)
                     }
+
+                    firebaseRepository.uploadReading(
+                        FirebaseRepository.SensorReading(
+                            heartRate = hrPart,
+                            secondSensorLabel = secondLabel,
+                            secondSensorValue = secondValue,
+                            steps = steps
+                        )
+                    ) { success -> isSynced = success }
                 } catch (e: Exception) {
-                    Log.e("MainActivity", "Error processing data", e)
+                    Log.e("MainActivity", "Decryption failed", e)
                 }
             }
         }
     }
 
+    /** Convierte "HR:75;ACC:0.1,0.2,0.3;STEPS:120" en un mapa {HR=75, ACC=.., STEPS=120} */
+    private fun parsePayload(raw: String): Map<String, String> {
+        return raw.split(";").mapNotNull { part ->
+            val idx = part.indexOf(':')
+            if (idx == -1) null else part.substring(0, idx) to part.substring(idx + 1)
+        }.toMap()
+    }
+
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "HR Alerts"
+            val descriptionText = "Notifications for high heart rate"
             val importance = NotificationManager.IMPORTANCE_HIGH
-            val channel = NotificationChannel("HR_CHANNEL", name, importance)
-            val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+            val channel = NotificationChannel("HR_CHANNEL", name, importance).apply {
+                description = descriptionText
+            }
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
     }
@@ -138,32 +156,31 @@ class MainActivity : ComponentActivity(), DataClient.OnDataChangedListener {
     private fun sendAlertNotification(hr: Float) {
         val builder = NotificationCompat.Builder(this, "HR_CHANNEL")
             .setSmallIcon(android.R.drawable.ic_dialog_alert)
-            .setContentTitle("High Heart Rate Alert!")
-            .setContentText("Your heart rate is $hr BPM. Please rest.")
+            .setContentTitle("¡Frecuencia cardiaca elevada!")
+            .setContentText("Tu frecuencia cardiaca es de $hr BPM. Por favor descansa.")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
 
-        val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(1, builder.build())
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(currentHR: Float, lastAccel: String, heartRateData: List<Entry>) {
+fun MainScreen(
+    currentHR: Float,
+    lastAccel: String,
+    currentSteps: Long,
+    heartRateData: List<Entry>,
+    isSynced: Boolean?
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
             CenterAlignedTopAppBar(
                 title = { Text("PRO Health Monitor", fontWeight = FontWeight.Bold) },
-                actions = {
-                    Icon(
-                        Icons.Default.CloudDone,
-                        contentDescription = "Firebase Connected",
-                        tint = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(end = 16.dp)
-                    )
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
+                actions = { SyncBadge(isSynced) },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary
                 )
@@ -177,7 +194,7 @@ fun MainScreen(currentHR: Float, lastAccel: String, heartRateData: List<Entry>) 
                 .background(
                     Brush.verticalGradient(
                         colors = listOf(
-                            MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
+                            MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.35f),
                             MaterialTheme.colorScheme.surface
                         )
                     )
@@ -185,37 +202,49 @@ fun MainScreen(currentHR: Float, lastAccel: String, heartRateData: List<Entry>) 
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 SensorCard(
-                    title = "Heart Rate",
-                    value = currentHR.toInt().toString(),
+                    title = "Ritmo cardiaco",
+                    value = "${currentHR.toInt()}",
                     unit = "BPM",
                     icon = Icons.Default.Favorite,
-                    iconColor = Color.Red,
+                    iconColor = Color(0xFFE53935),
                     modifier = Modifier.weight(1f)
                 )
                 SensorCard(
-                    title = "Secondary",
-                    value = lastAccel.substringAfter(":").take(10),
-                    unit = lastAccel.substringBefore(":"),
+                    title = "Movimiento",
+                    value = lastAccel.substringAfter(":").take(12).ifBlank { "N/A" },
+                    unit = "",
                     icon = Icons.Default.Speed,
-                    iconColor = Color.Blue,
+                    iconColor = Color(0xFF1E88E5),
+                    modifier = Modifier.weight(1f)
+                )
+                SensorCard(
+                    title = "Pasos",
+                    value = "$currentSteps",
+                    unit = "",
+                    icon = Icons.Default.DirectionsWalk,
+                    iconColor = Color(0xFF43A047),
                     modifier = Modifier.weight(1f)
                 )
             }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             Card(
                 modifier = Modifier.fillMaxWidth().weight(1f),
-                shape = RoundedCornerShape(16.dp),
-                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                shape = RoundedCornerShape(24.dp),
+                elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
             ) {
-                Column(modifier = Modifier.padding(16.dp)) {
+                Column(modifier = Modifier.padding(20.dp)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(Icons.Default.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Live Activity Chart", style = MaterialTheme.typography.titleMedium)
+                        Text(
+                            "Actividad en tiempo real",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold
+                        )
                     }
                     Spacer(modifier = Modifier.height(16.dp))
                     HRChart(heartRateData)
@@ -226,24 +255,52 @@ fun MainScreen(currentHR: Float, lastAccel: String, heartRateData: List<Entry>) 
 }
 
 @Composable
+fun SyncBadge(isSynced: Boolean?) {
+    val (icon, color, label) = when (isSynced) {
+        true -> Triple(Icons.Default.CloudDone, Color(0xFF43A047), "Sincronizado")
+        false -> Triple(Icons.Default.CloudOff, Color(0xFFE53935), "Error")
+        null -> Triple(Icons.Default.CloudOff, Color.Gray, "Esperando")
+    }
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.padding(end = 12.dp)
+    ) {
+        Icon(icon, contentDescription = label, tint = color, modifier = Modifier.size(20.dp))
+    }
+}
+
+@Composable
 fun SensorCard(title: String, value: String, unit: String, icon: ImageVector, iconColor: Color, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier,
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(14.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Icon(icon, contentDescription = null, tint = iconColor, modifier = Modifier.size(32.dp))
+            Box(
+                modifier = Modifier
+                    .size(44.dp)
+                    .clip(CircleShape)
+                    .background(iconColor.copy(alpha = 0.15f)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(icon, contentDescription = null, tint = iconColor, modifier = Modifier.size(24.dp))
+            }
             Spacer(modifier = Modifier.height(8.dp))
-            Text(title, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.outline)
+            Text(
+                title,
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.outline,
+                maxLines = 1
+            )
             Row(verticalAlignment = Alignment.Bottom) {
-                Text(value, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
+                Text(value, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.ExtraBold)
                 if (unit.isNotEmpty()) {
-                    Text(unit, style = MaterialTheme.typography.labelSmall, modifier = Modifier.padding(start = 2.dp, bottom = 4.dp))
+                    Text(unit, style = MaterialTheme.typography.labelSmall, modifier = Modifier.padding(start = 2.dp, bottom = 3.dp))
                 }
             }
         }
