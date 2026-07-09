@@ -64,9 +64,9 @@ class MainActivity : ComponentActivity(), SensorEventListener {
     ) { permissions ->
         val bodyGranted = permissions[Manifest.permission.BODY_SENSORS] ?: false
         val activityGranted = permissions[Manifest.permission.ACTIVITY_RECOGNITION] ?: false
-        
+
         Log.d("Permissions", "Body: $bodyGranted, Activity: $activityGranted")
-        
+
         if (bodyGranted && activityGranted) {
             startSensors()
         } else {
@@ -74,7 +74,7 @@ class MainActivity : ComponentActivity(), SensorEventListener {
             if (!bodyGranted) missing.add("Sensores (Corazón)")
             if (!activityGranted) missing.add("Actividad (Pasos)")
             Toast.makeText(this, "Faltan permisos: ${missing.joinToString(", ")}", Toast.LENGTH_LONG).show()
-            
+
             // Si falta alguno, volvemos a intentar pedir solo el que falta
             // Esto ayuda en relojes Samsung nuevos que a veces ignoran peticiones múltiples
             requestPermissions()
@@ -84,7 +84,7 @@ class MainActivity : ComponentActivity(), SensorEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        
+
         // Buscamos TODOS los sensores disponibles para debug
         val deviceSensors: List<Sensor> = sensorManager.getSensorList(Sensor.TYPE_ALL)
         deviceSensors.forEach { Log.d("SensorList", "Sensor: ${it.name} type: ${it.type}") }
@@ -93,7 +93,7 @@ class MainActivity : ComponentActivity(), SensorEventListener {
         accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
         stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
-        
+
         if (heartRateSensor == null) Log.e("Sensors", "Heart Rate sensor NOT found!")
         if (stepSensor == null) Log.e("Sensors", "Step Counter sensor NOT found!")
 
@@ -141,8 +141,8 @@ class MainActivity : ComponentActivity(), SensorEventListener {
                 sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_NORMAL)
             }
         }
-        
-        // El acelerómetro y la luz no suelen requerir permisos peligrosos específicos, 
+
+        // El acelerómetro y la luz no suelen requerir permisos peligrosos específicos,
         // pero el contador de pasos sí requiere Reconocimiento de Actividad.
         registerSecondSensor()
 
@@ -177,12 +177,6 @@ class MainActivity : ComponentActivity(), SensorEventListener {
             when (it.sensor.type) {
                 Sensor.TYPE_HEART_RATE -> {
                     heartRateValue = it.values[0]
-                    val secondData = if (activeSensorType == Sensor.TYPE_ACCELEROMETER) {
-                        "ACC:${accelValues.joinToString(",")}"
-                    } else {
-                        "LIGHT:$lightValue"
-                    }
-                    wearableSender.sendSensorData(heartRateValue, secondData, stepsValue)
                 }
                 Sensor.TYPE_ACCELEROMETER -> {
                     accelValues = it.values.clone()
@@ -196,6 +190,15 @@ class MainActivity : ComponentActivity(), SensorEventListener {
                     stepsValue = total - (stepsBaseline ?: total)
                 }
             }
+            // Enviamos con CUALQUIER sensor que cambie, no solo con HR.
+            // Así, si el reloj no tiene sensor de ritmo cardiaco (o tarda en
+            // responder), igual se manda info al teléfono con los demás valores.
+            val secondData = if (activeSensorType == Sensor.TYPE_ACCELEROMETER) {
+                "ACC:${accelValues.joinToString(",")}"
+            } else {
+                "LIGHT:$lightValue"
+            }
+            wearableSender.sendSensorData(heartRateValue, secondData, stepsValue)
         }
     }
 

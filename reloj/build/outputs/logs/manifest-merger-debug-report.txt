@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
-INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-40:12
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:2:1-43:12
 MERGED from [androidx.wear.compose:compose-material-core:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/a2925cfaaef2468f358c268c6be35d9a/transformed/compose-material-core-1.6.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.wear.compose:compose-ui-tooling:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/cf5dbae20aea7d88e251b67357242378/transformed/compose-ui-tooling-1.6.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.wear.compose:compose-material3:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/88a6a43afc2fac539ad9d83bf6da3844/transformed/compose-material3-1.6.2/AndroidManifest.xml:2:1-7:12
@@ -103,17 +103,33 @@ uses-permission#android.permission.BODY_SENSORS
 ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:5:5-71
 	android:name
 		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:5:22-68
+uses-permission#android.permission.BODY_SENSORS_BACKGROUND
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:6:5-82
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:6:22-79
 uses-permission#android.permission.ACTIVITY_RECOGNITION
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:6:5-79
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:7:22-76
 uses-feature#android.hardware.type.watch
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:8:5-64
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:9:5-64
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:8:19-61
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:9:19-61
+uses-feature#android.hardware.sensor.heartrate
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:10:5-95
+	android:required
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:10:68-92
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:10:19-67
+uses-feature#android.hardware.sensor.stepcounter
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:11:5-97
+	android:required
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:11:70-94
+	android:name
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:11:19-69
 application
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:10:5-38:19
-INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:10:5-38:19
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:13:5-41:19
+INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:13:5-41:19
 MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/dbcc202ed399bbc9b2181c636333987a/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
@@ -149,55 +165,55 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/ernestoalexisnievesb
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.18.0] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/197956897113684a8cfac09fe635a79a/transformed/core-1.18.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:14:9-35
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:13:9-41
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:16:9-41
 	android:icon
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:12:9-56
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:15:9-56
 	android:allowBackup
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:15:9-59
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:18:9-59
 uses-library#com.google.android.wearable
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:17:9-19:39
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:20:9-22:39
 	android:required
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:19:13-36
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:22:13-36
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:18:13-55
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:21:13-55
 uses-library#wear-sdk
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:20:9-22:40
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:23:9-25:40
 MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:23:9-25:40
 MERGED from [androidx.wear.compose:compose-foundation:1.6.2] /Users/ernestoalexisnievesbonilla/.gradle/caches/9.4.1/transforms/42284c2251587f7c7e898683509be497/transformed/compose-foundation-1.6.2/AndroidManifest.xml:23:9-25:40
 	android:required
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:22:13-37
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:21:13-36
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:24:13-36
 meta-data#com.google.android.wearable.standalone
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:24:9-26:36
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:27:9-29:36
 	android:value
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:26:13-33
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:29:13-33
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:25:13-66
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:28:13-66
 activity#com.example.reloj.presentation.MainActivity
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:28:9-37:20
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:31:9-40:20
 	android:exported
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:30:13-36
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:33:13-36
 	android:theme
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:32:13-62
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:35:13-62
 	android:taskAffinity
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:31:13-36
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:34:13-36
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:29:13-54
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:32:13-54
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:33:13-36:29
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:36:13-39:29
 action#android.intent.action.MAIN
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:34:17-69
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:34:25-66
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:37:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:35:17-77
+ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:38:17-77
 	android:name
-		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:35:27-74
+		ADDED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml:38:27-74
 uses-sdk
 INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/ernestoalexisnievesbonilla/AndroidStudioProjects/AplicacionPRO/reloj/src/main/AndroidManifest.xml
